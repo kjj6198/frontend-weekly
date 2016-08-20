@@ -1,3 +1,6 @@
-# My Awesome Book
+# Sudo 前端週刊 {#introduction}
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+前端週刊主要會記錄 sudo 前端本週的工作內容，以及發現的新東西。
+
+
+
