@@ -8,4 +8,5 @@
 * [Sudo Weekly5](sudo-weekly5.md)
 * [Sudo Weekly6](sudo-weekly6.md)
 * [Sudo Weekly7](sudo-weekly7.md)
+* [Sudo Weekly8](sudo-weekly8.md)
 
