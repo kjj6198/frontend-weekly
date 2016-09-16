@@ -9,4 +9,7 @@
 * [Sudo Weekly6](sudo-weekly6.md)
 * [Sudo Weekly7](sudo-weekly7.md)
 * [Sudo Weekly8](sudo-weekly8.md)
+* [Sudo Weekly9](sudo-weekly9.md)
+* [Why I don't like PostCSS](why-i-dont-like-postcss.md)
+* [Legacy Code 3](legacy-code-3.md)
 
