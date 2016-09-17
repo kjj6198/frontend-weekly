@@ -68,15 +68,57 @@
 
 #### 如果都沒辦法滿足怎麼辦？
 
-如果以上的 tag 都沒有辦法滿足你的需求，最常見的做法就是用純 div。而 HTML 為了因應這樣的需求，也提出的 ARIA 的 spec，讓開發者可以更容易製作客製化的元件。例如，我們想要使用 div 來模擬按鈕的行為，除了在 class 加上 `btn` 之外，我們同時可以加上：
+如果以上的 tag 都沒有辦法滿足你的需求，最常見的做法就是用純 div。而 HTML 為了因應這樣的需求，也提出的 ARIA 的 spec，讓開發者可以更容易製作客製化的元件。如果我們想要使用 div 來模擬按鈕的行為，除了在 class 加上 `btn` 之外，我們同時可以加上 role attribute，並且使用相對應的 aria-\* 標籤來做對應的狀態處理（是否按下、disabled、haspopup 等等），除了更加語義化之外，這些看起來有點麻煩的細節，都會大幅地改善使用 screen reader 的體驗。
+
+但是，盡量不要取代原本語義化的標籤的含義，例如將 button 標籤加入 `role="modal"`  之後當作 modal 使用。
+
+> Web developers _must not_ use the ARIA `role` and `aria-*` attributes in a manner that conflicts with the semantics described in the [Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance)table. Web developers _should not_ set the ARIA `role` and `aria-*` attributes to values that match the default implicit ARIA semantics defined in the table. - [w3c spec](https://www.w3.org/TR/html-aria/#rules-wd)
+
+當然，雖然 spec 這麼說，但某些 tag 像是 `input + label` 的 hack 對前端開發來講真的很方便。這部分或許就看大家的取捨了。
 
 ```html
 <div class="btn" role="button" aria-disabled="false">Click to Signup</div>
 ```
 
-
-
 ### Accessibility
 
+accessibility 其實可以另外再寫一篇文章來討論，但因為不再本篇的討論範圍內，這邊只列幾點關於 accessibility 的注意要點。
+
+* 文字的大小
+* 顏色的對比
+* 是否加入適當的 attr。（img 的 alt, link 的 title 等）
+* 適當的 aria-\* 使用
+
+如果對 accessility 有興趣，建議大家看看：
+
+- [ARIA](https://www.w3.org/TR/html-aria/) w3c 的 aria 標準。
+- [WebAIM checklist](http://webaim.org/standards/wcag/checklist) WCAG 的 checklist
+- [WebAIM inviblecontent](http://webaim.org/techniques/css/invisiblecontent/) 關於 CSS invisible content 的介紹
+
 ### 模板語言（已 rails views 為例）
+
+目前市面上有很多模板引擎，像是 `ejs` `erb` `handlebar` `jade` 等等，都有一套特定的語法、partial、客製化的函數等等幫助你簡化冗長的 HTML。
+
+就 rails views 來說
+
+```html
+<%= render 'partial/buttons/primary', locals: {
+  :name => 'foo'
+  :title => 'bar'
+} %>
+```
+
+將常用的元件拆成 partial，並且放在對應的資料夾（我的習慣是將所有 partial 檔統一資料夾管理，除非那個 partial 只有在某一個特定頁面使用）。這樣一來就可以很容易地引入已經撰寫好的 HTML 架構。
+
+```html
+<%= render 'partial/modal', locals: {
+ :name => 'foo',
+ :title => 'bar',
+ :image => image_path('a.png')
+} %>
+```
+
+## 結論
+
+HTML 的重構比起 CSS 跟 JS，算是簡單許多（只要 css 撰寫的時候不用 tag 做 styling），不過從頭看下來，要顧慮的事情也不少。正確的使用 tag 以及顧慮 accessibility，能夠有效地增加 UX，同時自己在修改的時候也不會看到一大堆 div 看到心癢癢。
 
