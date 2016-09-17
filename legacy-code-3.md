@@ -10,16 +10,15 @@
 
 ### 語義化
 
-首先，我們先來看看 HTML 的 tag 有哪些吧
+首先，我們先來看看 HTML5 新增的 tag 有哪些
 
-\["allcollection", "anchor", "area", "audio", "base", "body", "br", "button", "canvas", "collection", "content", "datalist", "details", "dialog", "directory", "div", "dlist", "document", "embed", "fieldset", "font", "form", "formcontrolscollection", "frame", "frameset", "head", "heading", "hr", "html", "iframe", "image", "input", "keygen", "label", "legend", "li", "link", "map", "marquee", "media", "menu", "meta", "meter", "mod", "object", "olist", "optgroup", "option", "optionscollection", "output", "paragraph", "param", "picture", "pre", "progress", "quote", "script", "select", "shadow", "slot", "source", "span", "style", "table", "tablecaption", "tablecell", "tablecol", "tablerow", "tablesection", "template", "textarea", "title", "track", "ulist", "unknown", "video"\]
+#### section
 
-```js
-Object.getOwnPropertyNames(window) .filter(value => value.indexOf('HTML') >= 0).map(value => { const HTMLTagReg = /HTML([^Element$]+)/;  if(value.match(HTMLTagReg) !== null) { return value.match(HTMLTagReg)[1]; }
+* 用來表示網頁裡的一個**段落**，常見的誤解是用來表示一篇文章。
 
- return value; }) .map(value => value.toLowerCase()) .filter(value => value !== '') .sort()
 
-```
+
+
 
 ### Accessibility
 
