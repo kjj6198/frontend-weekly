@@ -64,7 +64,17 @@
 </form>
 ```
 
-族繁不及備載，tag 的部分就在此告一段落。我個人覺得有一大部分是因為**不知道**才沒有使用這些 tag 的，詳情可以到[w3c](http://www.w3school.com.cn/tags/tag_legend.asp) 的網站看看。
+族繁不及備載，tag 的部分就在此告一段落。我個人覺得有一大部分是因為**不知道**才沒有使用這些 tag 的，詳情可以到[w3c](http://www.w3school.com.cn/tags/tag_legend.asp) 的網站看看。之後會再將其他 tag 的使用方式補上。
+
+#### 如果都沒辦法滿足怎麼辦？
+
+如果以上的 tag 都沒有辦法滿足你的需求，最常見的做法就是用純 div。而 HTML 為了因應這樣的需求，也提出的 ARIA 的 spec，讓開發者可以更容易製作客製化的元件。例如，我們想要使用 div 來模擬按鈕的行為，除了在 class 加上 `btn` 之外，我們同時可以加上：
+
+```html
+<div class="btn" role="button" aria-disabled="false">Click to Signup</div>
+```
+
+
 
 ### Accessibility
 
