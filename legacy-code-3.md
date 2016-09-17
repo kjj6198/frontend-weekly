@@ -15,10 +15,56 @@
 #### section
 
 * 用來表示網頁裡的一個**段落**，常見的誤解是用來表示一篇文章。
+* 基本上跟 div 沒有太大的差別，只有語義化的表現。
+
+#### article
+
+* 用來表示一篇**文章**
+
+#### datalist
+
+#### dl dt dd
+
+* 如果資訊是以條列式來呈現，可以使用 dt, dd 來區分。
+  > Definition lists, created using the DL element, generally consist of a series of term\/definition pairs \(although definition lists may have other applications\). Thus, when advertising a product, one might use a definition list:
 
 
+```html
+<dl class="information">
+  <dt>薪水：</dt>
+  <dd>100000 ~ 300000<dd>
+  <dt>工作地點：</dt>
+  <dd>台北市</dd>
+</dl>
+```
+
+任何以成對方式呈現的資訊都可以使用 dt, dd 包裝，像是範例中的：薪水搭配 100000 ~ 300000、工作地點搭配台北市。不過要注意的一點是 dl 預設會將內容縮排（就跟 ul, ol 一樣）。可以將 padding 設置為 0 來解決。
+
+#### figure figcaption
+
+* 使用在和主內容相關的圖片、代碼，或其他資訊，不一定只能放圖而已
+
+* 搭配 figcaption 來定義標題
 
 
+#### legend
+
+* 搭配 fieldset 使用，用來表示輸入表單的內容
+* 預設的邊框很醜，如果要使用這樣的結構可能要重置一下 CSS
+
+```html
+<form>
+  <fieldset>
+    <legend>信用卡資訊</legend>
+    <label>卡號</label>
+    <input type="tel" />
+    <label>到期日</label>
+    <input type="date" />
+  </fieldset>
+</form>
+```
+
+族繁不及備載，tag 的部分就在此告一段落。我個人覺得有一大部分是因為**不知道**才沒有使用這些 tag 的，詳情可以到[w3c](http://www.w3school.com.cn/tags/tag_legend.asp) 的網站看看。
 
 ### Accessibility
 
