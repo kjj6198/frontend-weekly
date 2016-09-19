@@ -12,4 +12,5 @@
 * [Sudo Weekly9](sudo-weekly9.md)
 * [Why I don't like PostCSS](why-i-dont-like-postcss.md)
 * [Legacy Code 3](legacy-code-3.md)
+* [MutationObserver](mutationobserver.md)
 
